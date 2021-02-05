@@ -5,7 +5,6 @@ const cors = require('cors')
 const helmet = require('helmet')
 const { NODE_ENV } = require('./config')
 const bookmarksRouter = require('./bookmarks/bookmarks_router')
-const bodyParser = express.json()
 const logger = require('./logger')
 
 const app = express()
@@ -35,6 +34,7 @@ app.use(express.json());
 
 
 app.use(bookmarksRouter)
+
 
 
 app.get('/', (req, res) => {
